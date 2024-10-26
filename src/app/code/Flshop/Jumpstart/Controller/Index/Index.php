@@ -13,4 +13,3 @@ class Index implements HttpGetActionInterface
         die('Hello World');
     }
 }
-
