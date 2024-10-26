@@ -1,0 +1,28 @@
+<?php
+/**
+ * @var \Flshop\Weather\Block\Weather $block
+ */
+?>
+<h1>Current Weather</h1>
+
+<?php
+// Define the list of cities you want to display
+$cities = ['HaNoi', 'London', 'New York', 'Tokyo', 'Sydney'];
+$weatherDataList = $block->getMultipleWeatherData($cities);
+?>
+
+<?php if (!empty($weatherDataList)): ?>
+    <div class="weather-container">
+        <?php foreach ($weatherDataList as $weatherData): ?>
+            <div class="weather-card">
+                <h2><?php echo $this->escapeHtml($weatherData['name']); ?>, <?php echo $this->escapeHtml($weatherData['sys']['country']); ?></h2>
+                <p>Temperature: <?php echo $this->escapeHtml($weatherData['main']['temp']); ?> °C</p>
+                <p>Weather: <?php echo $this->escapeHtml(ucfirst($weatherData['weather'][0]['description'])); ?></p>
+                <p>Humidity: <?php echo $this->escapeHtml($weatherData['main']['humidity']); ?>%</p>
+                <p>Wind Speed: <?php echo $this->escapeHtml($weatherData['wind']['speed']); ?> m/s</p>
+            </div>
+        <?php endforeach; ?>
+    </div>
+<?php else: ?>
+    <p>No weather data available at the moment.</p>
+<?php endif; ?>
