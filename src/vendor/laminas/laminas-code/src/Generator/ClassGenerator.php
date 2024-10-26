@@ -23,6 +23,7 @@ use function rtrim;
 use function sprintf;
 use function str_contains;
 use function str_replace;
+use function strpos;
 use function strrpos;
 use function strtolower;
 use function substr;
@@ -184,6 +185,7 @@ class ClassGenerator extends AbstractGenerator implements TraitUsageInterface
      * @configkey properties
      * @configkey methods
      * @throws Exception\InvalidArgumentException
+     * @param  array $array
      * @return static
      */
     public static function fromArray(array $array)

@@ -79,6 +79,7 @@ class InterfaceGenerator extends ClassGenerator
      * @configkey constants
      * @configkey methods
      * @throws Exception\InvalidArgumentException
+     * @param  array $array
      * @return static
      */
     public static function fromArray(array $array)

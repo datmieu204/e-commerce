@@ -134,6 +134,7 @@ class MethodGenerator extends AbstractMemberGenerator
      * @configkey static           bool
      * @configkey visibility       string
      * @throws Exception\InvalidArgumentException
+     * @param  array $array
      * @return MethodGenerator
      */
     public static function fromArray(array $array)
