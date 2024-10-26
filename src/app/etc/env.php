@@ -8,7 +8,7 @@ return [
     ],
     'cache' => [
         'graphql' => [
-            'id_salt' => 'oBUOAG6JhXB4uBnunDwFZjDE6X4ZVs8l'
+            'id_salt' => 'H5Xu4BIjgTzZuhbfmxbu9hOcSWQKkxkc'
         ],
         'frontend' => [
             'default' => [
@@ -54,7 +54,7 @@ return [
         'consumers_wait_for_messages' => 1
     ],
     'crypt' => [
-        'key' => 'base64G3K+OB+5RB7vky3cXXcAH/jFNWNjjNE6PNbwgIWdIcA='
+        'key' => 'base64q8+b/ht/wmB+3ehV7GSX24uJQxuiREhHbBHV1wbxZEw='
     ],
     'db' => [
         'table_prefix' => '',
@@ -135,6 +135,6 @@ return [
         'flshop.me'
     ],
     'install' => [
-        'date' => 'Sat, 26 Oct 2024 07:38:05 +0000'
+        'date' => 'Thu, 24 Oct 2024 07:11:31 +0000'
     ]
 ];

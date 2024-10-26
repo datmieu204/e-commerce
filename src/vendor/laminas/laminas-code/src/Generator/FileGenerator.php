@@ -93,6 +93,7 @@ class FileGenerator extends AbstractGenerator
      * @deprecated this API is deprecated, and will be removed in the next major release. Please
      *             use the other constructors of this class instead.
      *
+     * @param  array $values
      * @return FileGenerator
      */
     public static function fromArray(array $values)
