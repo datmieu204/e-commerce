@@ -1,0 +1,22 @@
+<?php /** @var \Flshop\EconomicNews\Block\News $block */ ?>
+
+<h1>Latest Economic News</h1>
+
+<?php
+/** @var array $articles */
+$articles = $block->getEconomicNews();
+?>
+
+<?php if (!empty($articles)): ?>
+    <ul class="economic-news">
+        <?php foreach ($articles as $article): ?>
+            <li>
+                <h2><?php echo $this->escapeHtml($article['title']); ?></h2>
+                <p><?php echo $this->escapeHtml($article['description']); ?></p>
+                <a href="<?php echo $this->escapeUrl($article['url']); ?>" target="_blank">Read more</a>
+            </li>
+        <?php endforeach; ?>
+    </ul>
+<?php else: ?>
+    <p>No economic news available at the moment.</p>
+<?php endif; ?>
