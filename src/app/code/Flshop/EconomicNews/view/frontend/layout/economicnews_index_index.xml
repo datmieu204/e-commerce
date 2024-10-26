@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <!-- Include the economicnews.css file -->
+        <css src="Flshop_EconomicNews::css/economicnews.css"/>
+    </head>
+    <body>
+        <referenceContainer name="content">
+            <block class="Flshop\EconomicNews\Block\News" name="economic.news" template="Flshop_EconomicNews::news.phtml"/>
+        </referenceContainer>
+    </body>
+</page>
