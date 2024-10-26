@@ -3,7 +3,6 @@
 This is the primary facade for fulfilling GraphQL operations.
 See [related documentation](executing-queries.md).
 
-@phpstan-import-type ArgsMapper from Executor
 @phpstan-import-type FieldResolver from Executor
 
 @see \GraphQL\Tests\GraphQLTest
@@ -163,17 +162,6 @@ static function getStandardValidationRules(): array
  * @api
  */
 static function setDefaultFieldResolver(callable $fn): void
-```
-
-```php
-/**
- * Set default args mapper implementation.
- *
- * @phpstan-param ArgsMapper $fn
- *
- * @api
- */
-static function setDefaultArgsMapper(callable $fn): void
 ```
 
 ## GraphQL\Type\Definition\Type
@@ -1353,9 +1341,8 @@ const CLASS_MAP = [
 
 Implements the "Evaluating requests" section of the GraphQL specification.
 
-@phpstan-type ArgsMapper callable(array<string, mixed>, FieldDefinition, FieldNode, mixed): mixed
 @phpstan-type FieldResolver callable(mixed, array<string, mixed>, mixed, ResolveInfo): mixed
-@phpstan-type ImplementationFactory callable(PromiseAdapter, Schema, DocumentNode, mixed, mixed, array<mixed>, ?string, callable, callable): ExecutorImplementation
+@phpstan-type ImplementationFactory callable(PromiseAdapter, Schema, DocumentNode, mixed, mixed, array<mixed>, ?string, callable): ExecutorImplementation
 
 @see \GraphQL\Tests\Executor\ExecutorTest
 
@@ -1401,7 +1388,6 @@ static function execute(
  * @param array<string, mixed>|null $variableValues
  *
  * @phpstan-param FieldResolver|null $fieldResolver
- * @phpstan-param ArgsMapper|null $argsMapper
  *
  * @api
  */
@@ -1413,8 +1399,7 @@ static function promiseToExecute(
     $contextValue = null,
     ?array $variableValues = null,
     ?string $operationName = null,
-    ?callable $fieldResolver = null,
-    ?callable $argsMapper = null
+    ?callable $fieldResolver = null
 ): GraphQL\Executor\Promise\Promise
 ```
 
